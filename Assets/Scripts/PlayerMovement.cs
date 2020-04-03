@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -67,11 +65,6 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
         }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            gm.PlaceBlock(transform);
-        }
     }
 
     private void FixedUpdate()
@@ -81,13 +74,11 @@ public class PlayerMovement : MonoBehaviour
         if (isMovingForward)
         {
             transform.position += transform.TransformDirection(Vector3.forward * speed);
-            // rg.velocity = transform.TransformDirection(Vector3.forward * speed);
         }
 
         if (isMovingBackward)
         {
             transform.position += transform.TransformDirection(Vector3.back * speed);
-            // rg.velocity = transform.TransformDirection(Vector3.back * speed);
         }
 
         if (isMovingLeft)
