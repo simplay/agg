@@ -15,12 +15,17 @@ public class BlockActions : MonoBehaviour
         RaycastHit hit;
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log(_camera.transform.forward);
             if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, 3))
             {
                 if (hit.collider.CompareTag("Cube"))
                 {
                     Debug.DrawRay(_camera.transform.position, _camera.transform.forward * hit.distance, Color.blue, 200);
                     Destroy(hit.collider.gameObject);
+                }
+                else if (hit.collider.CompareTag("Ball"))
+                {
+                    hit.collider.attachedRigidbody.AddExplosionForce(200f, hit.point, 2f);
                 }
             } 
         }
