@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
 {
     public float walkingSpeed = 0.5f;
     public float runningSpeed = 1f;
-    public float forwardForce = 20;
 
     private bool isRunning = false;
     private bool isMovingForward = false;
@@ -30,28 +29,28 @@ public class PlayerMovement : MonoBehaviour
         isMovingBackward = false;
         isMovingLeft = false;
         isMovingRight = false;
-
-        if (Input.GetKey("w"))
+        
+        if (Input.GetKey(KeyCode.W))
         {
             isMovingForward = true;
         }
 
-        if (Input.GetKey("s"))
+        if (Input.GetKey(KeyCode.S))
         {
             isMovingBackward = true;
         }
 
-        if (Input.GetKey("a"))
+        if (Input.GetKey(KeyCode.A))
         {
             isMovingLeft = true;
         }
 
-        if (Input.GetKey("d"))
+        if (Input.GetKey(KeyCode.D))
         {
             isMovingRight = true;
         }
 
-        if (Input.GetKeyDown("f"))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             gm.PlaceBlock(transform);
         }
