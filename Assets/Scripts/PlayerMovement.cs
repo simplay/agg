@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //public Rigidbody rg;
+
     public float walkingSpeed = 0.5f;
     public float runningSpeed = 1f;
 
@@ -12,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isMovingBackward = false;
     private bool isMovingLeft = false;
     private bool isMovingRight = false;
+    private bool jump = false;
 
     private GameManager gm;
 
@@ -29,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         isMovingBackward = false;
         isMovingLeft = false;
         isMovingRight = false;
+        jump = false;
         
         if (Input.GetKey(KeyCode.W))
         {
@@ -48,6 +52,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             isMovingRight = true;
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            jump = true;
         }
 
         if (Input.GetKeyDown(KeyCode.F))
@@ -78,6 +87,11 @@ public class PlayerMovement : MonoBehaviour
         if (isMovingRight)
         {
             transform.position += transform.TransformDirection(Vector3.right * speed * 0.75f);
+        }
+
+        if (jump)
+        {
+            
         }
     }
 }
