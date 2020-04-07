@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 8435500299997721580}
-  cube: {fileID: 5140490963155773701, guid: 2e85718479ae3814f893e4c1c65b011b, type: 3}
+  cube: {fileID: 65628133973551859, guid: 1dd6efc156fda774bb4191ce59eef0e2, type: 3}
 --- !u!65 &8435500298944552495
 BoxCollider:
   m_ObjectHideFlags: 0

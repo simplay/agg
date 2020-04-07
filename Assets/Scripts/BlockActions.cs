@@ -34,7 +34,8 @@ public class BlockActions : MonoBehaviour
         {
             if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, 3))
             {
-                PlaceBlock(hit.point + 0.5f * Vector3.up);
+                Vector3 newPosition = hit.point + new Vector3(1f, 1f, 1f);
+                PlaceBlock(newPosition);
             }
         }
     }
