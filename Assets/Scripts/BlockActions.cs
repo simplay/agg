@@ -32,10 +32,14 @@ public class BlockActions : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, 3))
+            if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, 5))
             {
-                Vector3 newPosition = hit.point + new Vector3(1f, 1f, 1f);
-                PlaceBlock(newPosition);
+                Vector3 gridPosition = new Vector3(
+                    Mathf.Round(hit.point.x) + 1f, 
+                    Mathf.Round(hit.point.y) + 1f, 
+                    Mathf.Round(hit.point.z) + 1f
+                );
+                PlaceBlock(gridPosition);
             }
         }
     }
